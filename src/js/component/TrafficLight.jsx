@@ -1,9 +1,20 @@
 import React from "react";
 import { useState } from "react";
-
+import { useEffect } from "react";
 
 const TrafficLight = () => {
   const [ color, setColor] = useState("red");
+
+  useEffect(() => {
+    const interval = setInterval(()=>{
+      setColor((prevColor) => {
+        if (prevColor === "red") return "yellow";
+        if (prevColor === "yellow") return "green";
+        return "red";
+      });   
+    },5000);
+    return () => clearInterval(interval); 
+  },[]);
 
     return  (<div className="semaforo">
         <div className=" text-center" style={{width: "80px", height: "220px", background: "black"}}>

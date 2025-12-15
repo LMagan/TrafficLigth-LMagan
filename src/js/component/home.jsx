@@ -10,9 +10,9 @@ import TrafficLight from "./TrafficLight";
 
 const Home = () => {
 	return (
-		
+		<div className=" container-fluid bg-secondary min-vh-100 d-flex justify-content-center">
 			<TrafficLight></TrafficLight>
-			
+		</div>
 	);
 };
 
